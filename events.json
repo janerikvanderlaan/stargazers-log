@@ -1,25 +1,25 @@
 [
   {
     "full_name": "facebook/react",
-    "description": "The library for web and native user interfaces.",
+    "description": "Une bibliothèque pour créer des interfaces utilisateur web et natives.",
     "url": "https://github.com/facebook/react",
     "starred_at": "2026-09-18"
   },
   {
     "full_name": "microsoft/vscode",
-    "description": "Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.",
+    "description": "Un éditeur de code conçu pour créer et déboguer des applications web et cloud modernes.",
     "url": "https://github.com/microsoft/vscode",
     "starred_at": "2026-08-22"
   },
   {
     "full_name": "vercel/next.js",
-    "description": "The React framework for pr0oduction.",
+    "description": "Le framework React conçu pour la production.",
     "url": "https://github.com/vercel/next.js",
     "starred_at": "2026-07-04"
   },
   {
     "full_name": "nodejs/node",
-    "description": "Node.js JavaScript runtime.",
+    "description": "Un environnement d’exécution JavaScript.",
     "url": "https://github.com/nodejs/node",
     "starred_at": "2026-06-12"
   }

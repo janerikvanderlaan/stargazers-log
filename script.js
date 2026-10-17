@@ -5,12 +5,12 @@ async function loadRepositories() {
   try {
     const response = await fetch("./events.json");
     if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
+      throw new Error(`La requête a échoué (statut ${response.status})`);
     }
 
     const repositories = await response.json();
     if (!Array.isArray(repositories)) {
-      throw new Error("Repository data must be a JSON array");
+      throw new Error("Les données des dépôts doivent être un tableau JSON");
     }
 
     const fragment = document.createDocumentFragment();
@@ -29,7 +29,7 @@ async function loadRepositories() {
 
       const date = document.createElement("time");
       date.dateTime = repository.starred_at;
-      date.textContent = `Starred ${new Date(`${repository.starred_at}T00:00:00`).toLocaleDateString(undefined, {
+      date.textContent = `Ajouté le ${new Date(`${repository.starred_at}T00:00:00`).toLocaleDateString("fr-FR", {
         year: "numeric",
         month: "long",
         day: "numeric"
@@ -41,11 +41,11 @@ async function loadRepositories() {
 
     list.replaceChildren(fragment);
     status.textContent = repositories.length
-      ? `${repositories.length} repositories`
-      : "No starred repositories yet.";
+      ? `${repositories.length} dépôt${repositories.length > 1 ? "s" : ""} étoilé${repositories.length > 1 ? "s" : ""}`
+      : "Aucun dépôt étoilé pour le moment.";
   } catch (error) {
-    console.error("Unable to load starred repositories:", error);
-    status.textContent = "Could not load repositories. Please try again later.";
+    console.error("Impossible de charger les dépôts étoilés :", error);
+    status.textContent = "Impossible de charger les dépôts. Réessayez plus tard.";
   }
 }
 
